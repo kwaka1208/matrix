@@ -58,10 +58,9 @@ int main(void) {
 			while(turn == COMPUTER) {
 				srand((unsigned)time(NULL));
 				n = rand() % 10;
-				if(take(n, turn) != 0) {
-					continue;
+				if(take(n, turn) == 0) {
+					turn = PLAYER;	// PLAYERの番にする。
 				}
-				turn = PLAYER;	// PLAYERの番にする。
 			}
 			break;
 		}
