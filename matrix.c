@@ -58,13 +58,8 @@ int main(void) {
 			while(turn == COMPUTER) {
 				srand((unsigned)time(NULL));
 				n = rand() % 10;
-<<<<<<< HEAD
 				if(take(n, turn) == 0) {
 					turn = PLAYER;	// PLAYERの番にする。
-=======
-				if(take(n, turn) != 0) {
-					continue;	// 既に取られているところだったら取り直し。
->>>>>>> origin/master
 				}
 			}
 			break;
