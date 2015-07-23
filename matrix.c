@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include <stdlib.h> //rand関数用
-#include <time.h>//stand関数用
+#include <stdlib.h>	//rand関数用
+#include <time.h>	//stand関数用
 
 #define MATRIX_SIZE	3
 
 /*
-	盤面データの状態
+	盤面状態の定義
 */
 #define NONE		0	// 0:まだ誰もとってない。
 #define PLAYER		1	// 1:プレイヤーが取った。
@@ -32,8 +32,8 @@ int main(void) {
 		}
 	}
 	
-	turn = PLAYER;
-	winner = NONE;
+	turn = PLAYER;	// ターンを設定、先攻は人間にする。
+	winner = NONE;	// 勝利者を表す変数。最初はどっちも勝ってない状態。
 	while(winner == NONE) {
 		showMatrix();
 		switch(turn) {
@@ -58,8 +58,13 @@ int main(void) {
 			while(turn == COMPUTER) {
 				srand((unsigned)time(NULL));
 				n = rand() % 10;
+<<<<<<< HEAD
 				if(take(n, turn) == 0) {
 					turn = PLAYER;	// PLAYERの番にする。
+=======
+				if(take(n, turn) != 0) {
+					continue;	// 既に取られているところだったら取り直し。
+>>>>>>> origin/master
 				}
 			}
 			break;
