@@ -43,11 +43,11 @@ int main(void) {
 			/* 入力待ちループ */
 			while(turn == PLAYER) {
 				scanf("%d", &n);
-				if(take(n, turn) != 0) {
-					printf("数値を入れなおしてください\n");
-					continue;
+				if(take(n, turn) == 0) {
+					turn = COMPUTER;	// COMPUTERの番にする。
+					break;
 				}
-				turn = COMPUTER;	// COMPUTERの番にする。
+				printf("数値を入れなおしてください\n");
 			}
 			break;
 
